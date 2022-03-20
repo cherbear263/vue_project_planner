@@ -1,8 +1,13 @@
 <template>
-  <div class="text-left container my-3 mx-auto bg-white py-2 px-4 rounded-md shadow border-l-8 border-pink-600/50">
-    <div class="actions">
+  <div class="text-left container my-3 mx-auto bg-white py-3 px-4 rounded-md shadow border-l-8 border-pink-600/50">
+    <div class="actions flex justify-between">
       <h3 class="text-lg font-semibold cursor-pointer"
       @click="showDetails = !showDetails">{{ project.title }}</h3>
+    <div class="icons">
+      <span class="material-icons text-lg cursor-pointer text-gray-400 ml-2 hover:text-blue-600">edit</span>
+      <span @click="deleteProject" class="material-icons text-lg cursor-pointer text-gray-400 ml-2 hover:text-pink-600">delete</span>
+      <span class="material-icons text-lg cursor-pointer text-gray-400 ml-2 hover:text-emerald-600">done</span>
+    </div>
 
     </div>
   <div v-if="showDetails">
@@ -16,8 +21,17 @@ export default {
   props: ['project'],
   data() {
     return {
-      showDetails: false
+      showDetails: false,
+      uri: 'http://localhost:3000/projects/' + this.project.id
     }
+  },
+  methods: {
+    deleteProject() {
+      fetch(this.uri, { method: 'DELETE'})
+      .then(() => this.$emit('delete', this.project.id))
+      .catch(err => console.log(err.message))
+
+    },
   }
 }
 </script>
