@@ -3,3 +3,12 @@
 @tailwind components;
 
 @tailwind utilities;
+
+@layer utilities {
+  .complete {
+    @apply border-l-4 border-emerald-500;
+  }
+  .complete .tick {
+    @apply text-emerald-500 text-xl font-bold;
+  }
+}
