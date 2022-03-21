@@ -1,13 +1,15 @@
 <template>
-  <div class="text-left container my-3 mx-auto bg-white py-3 px-4 rounded-md shadow border-l-4 border-pink-600/50"
+  <div class="container px-4 py-3 mx-auto my-3 text-left bg-white border-l-4 rounded-md shadow border-pink-600/50"
   :class="{complete: project.complete}">
-    <div class="actions flex justify-between">
+    <div class="flex justify-between actions">
       <h3 class="text-lg font-semibold cursor-pointer"
       @click="showDetails = !showDetails">{{ project.title }}</h3>
     <div class="icons">
-      <span class="material-icons text-lg cursor-pointer text-gray-400 ml-2 hover:text-blue-600">edit</span>
-      <span @click="deleteProject" class="material-icons text-lg cursor-pointer text-gray-400 ml-2 hover:text-pink-600">delete</span>
-      <span @click="toggleComplete" class="material-icons text-lg cursor-pointer text-gray-400 ml-2 hover:text-emerald-600 tick">done</span>
+      <router-link :to="{ name: 'EditProject', params: { id: project.id }}">
+        <span class="ml-2 text-lg text-gray-400 cursor-pointer material-icons hover:text-blue-600">edit</span></router-link>
+      
+      <span @click="deleteProject" class="ml-2 text-lg text-gray-400 cursor-pointer material-icons hover:text-pink-600">delete</span>
+      <span @click="toggleComplete" class="ml-2 text-lg text-gray-400 cursor-pointer material-icons hover:text-emerald-600 tick">done</span>
     </div>
 
     </div>

@@ -2,27 +2,33 @@
   "projects": [
     {
       "id": 1,
-      "title": "Create new homepage banner",
-      "details": "Lorem ipsum",
+      "title": "Create new homepage call to action",
+      "details": "Ready set go!",
       "complete": false
     },
     {
       "id": 2,
-      "title": "Make marketing email",
-      "details": "Lorem ipsum",
+      "title": "Make marketing Infographic",
+      "details": "For the best of the best. ",
       "complete": false
     },
     {
       "title": "Make a new website",
       "details": "See details on Slack from client. Short time frame. ",
-      "complete": false,
+      "complete": true,
       "id": 3
     },
     {
-      "title": "Get a PA for Curtis",
-      "details": "Someone online would be perfect",
-      "complete": false,
+      "title": "Wash the cat",
+      "details": "meow",
+      "complete": true,
       "id": 4
+    },
+    {
+      "title": "Grocery Shopping",
+      "details": "Lots and lots and lots of things..",
+      "complete": false,
+      "id": 5
     }
   ]
 }
